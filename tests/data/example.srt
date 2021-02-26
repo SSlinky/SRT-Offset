@@ -1,0 +1,30 @@
+1
+00:00:57,040 --> 00:02:00,044
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+2
+00:02:05,160 --> 00:02:08,960
+Integer mollis augue ac elementum fringilla.
+In hendrerit risus vel condimentum efficitur.
+
+3
+00:02:09,040 --> 00:02:12,522
+Vestibulum euismod odio cursus rhoncus posuere.
+
+4
+00:02:12,880 --> 00:02:16,487
+In rutrum eros ut ligula lobortis interdum sed in justo.
+Aenean ac erat sed enim eleifend porta id eu lectus.
+
+5
+00:02:17,280 --> 00:02:18,645
+Sed quis mauris molestie, posuere lorem in, fermentum turpis.
+
+6
+00:02:24,000 --> 00:02:27,846
+Fusce auctor augue vitae eleifend egestas.
+Phasellus sit amet enim blandit, imperdiet magna ac, tristique lectus.
+
+7
+00:02:30,080 --> 00:02:32,082
+Vivamus at augue at augue finibus fermentum vel eu ante.
