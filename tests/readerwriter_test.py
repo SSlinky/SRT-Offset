@@ -4,33 +4,41 @@ from unittest.mock import patch, mock_open
 
 
 class WriteExample():
-    def w(self):
-        pass
+    def w(self, fn, s):
+        with open(fn, 'w') as f:
+            f.write(s)
 
 
 class Test_ReaderWriter(unittest.TestCase):
 
-    def test_read_and_write(self):
+    def test_write(self):
         # Arrange
-        open_mock = mock_open()
-        filename = 'test.srt'
-        test_data = [
-            '1',
-            '00:00:57,040 --> 00:02:00,044',
-            "We're going to Braavos!"
-            ]
+        m = mock_open()
+        filename = 'unittest_write.txt'
+        test_data = '\n'.join([f'Line_{n}.' for n in range(1, 6)])
 
         # Act
-        with patch('readerwriter.open', open_mock, create=True):
-            readerwriter.io.write(filename, '\n'.join(test_data))
+        with patch('builtins.open', m):
+            readerwriter.Io.write(filename, test_data)
 
         # Assert
-        open_mock.assert_called_with(filename, 'w')
-        open_mock.return_value.write.assert_called_once_with(test_data)
+        m.assert_called_with(filename, 'w')
+        m.return_value.writelines.assert_called_once_with(test_data)
 
-    def test_mock(self):
-        open_mock = mock_open()
-        filename = 'test.srt'
+    def test_read(self):
+        # Arrange
+        filename = 'unittest_read.txt'
+        test_data = [f'Line_{n}.\n' for n in range(1, 6)]
+        m = mock_open(read_data=''.join(test_data))
+
+        # Act
+        with patch('builtins.open', m):
+            result = readerwriter.Io.read(filename)
+
+        # Assert
+        m.assert_called_with(filename, 'r')
+        m.return_value.readlines.assert_called_once()
+        self.assertEqual(test_data, result)
 
 
 if __name__ == '__main__':
