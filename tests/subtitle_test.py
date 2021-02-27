@@ -9,9 +9,9 @@ class Test_SubtitleItem(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        id = '1'
-        ts = '00:00:57,040 --> 00:02:00,044'
-        tx = "We're going to Braavos!"
+        id = '1\n'
+        ts = '00:00:57,040 --> 00:02:00,044\n'
+        tx = "SubtitleTextLine\n"
         cls.sub_item = subtitle.Item(id, ts, tx)
         cls.expected_start = datetime(1, 1, 1, 0, 0, 57, 40000)
         cls.expected_end = datetime(1, 1, 1, 0, 2, 0, 44000)
