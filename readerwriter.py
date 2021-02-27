@@ -1,4 +1,4 @@
-class io():
+class Io():
     @staticmethod
     def read(filename: str):
         """Opens a text file and returns the data"""
