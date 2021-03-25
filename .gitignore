@@ -130,3 +130,5 @@ dmypy.json
 
 # Nothing to see here
 .no_commit
+
+.vscode/
